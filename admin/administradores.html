@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administradores — Painel da delegacia</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="admin">
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V5l-8-3Z" fill="#0B1220"/></svg></span>
+      <span class="brand-text"><span class="t1">Denúncia Anônima</span><span class="t2">SISTEMA INTEGRADO DE SEGURANÇA</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Abrir menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <nav class="nav">
+      <a href="../index.html" data-page="home">Início</a>
+      <a href="../denuncia.html" data-page="denuncia">Fazer denúncia</a>
+      <a href="../consultar.html" data-page="consultar">Consultar protocolo</a>
+      <a href="login.html" class="cta" data-page="admin">Área da delegacia</a>
+    </nav>
+  </div>
+</header>
+
+<div class="admin-shell">
+  <div class="admin-top">
+    <div class="wrap">
+      <div class="admin-id">
+        <span class="icn"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V5l-8-3Z" fill="#0B1220"/></svg></span>
+        <div>
+          <h1>Painel de gestão da delegacia</h1>
+          <p id="admin-setor">Agente logado: — | Setor: —</p>
+        </div>
+      </div>
+      <div class="admin-tabs">
+        <a href="dashboard.html" data-page="dash">Dashboard</a>
+        <a href="denuncias.html" data-page="denuncias-admin">Denúncias</a>
+        <a href="administradores.html" data-page="admins" class="is-active">Administradores</a>
+        <a href="#" class="logout">Sair</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-body">
+    <div class="wrap two-col">
+
+      <div class="panel panel-pad">
+        <h3 style="margin-bottom:16px; font-size:.98rem">Novo administrador</h3>
+        <div id="admin-erro" class="callout callout-err" style="display:none">
+          <p class="mb-0">Preencha nome, usuário e setor antes de cadastrar.</p>
+        </div>
+        <form id="form-admin">
+          <div class="field">
+            <label for="a-nome">Nome completo</label>
+            <input type="text" id="a-nome" placeholder="Ex.: Ana Beatriz Souza" required>
+          </div>
+          <div class="field">
+            <label for="a-usuario">Usuário / login</label>
+            <input type="text" id="a-usuario" placeholder="Ex.: ana.souza" required>
+          </div>
+          <div class="field">
+            <label for="a-setor">Setor / delegacia</label>
+            <input type="text" id="a-setor" placeholder="Ex.: Delegacia de Crimes Cibernéticos" required>
+          </div>
+          <div class="field">
+            <label for="a-permissao">Permissão</label>
+            <select id="a-permissao">
+              <option value="agente" selected>Agente analista</option>
+              <option value="geral">Administrador geral</option>
+            </select>
+            <span class="hint">Senha padrão para novos cadastros: 123456</span>
+          </div>
+          <button type="submit" class="btn btn-dark btn-block">Cadastrar agente</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Equipe de administração cadastrada</h2>
+            <p>Usuários com acesso ao painel da delegacia</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Nome</th><th>Login</th><th>Setor / delegacia</th><th>Permissão</th></tr>
+            </thead>
+            <tbody id="tabela-admins"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <strong>Sistema Web de Denúncias Anônimas</strong> © 2026
+    <div class="fine">Protótipo acadêmico desenvolvido para simulação de gestão e segurança pública.</div>
+  </div>
+</footer>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/admin-common.js"></script>
+<script src="../js/admin-administradores.js"></script>
+</body>
+</html>

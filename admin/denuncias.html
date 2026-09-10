@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Denúncias — Painel da delegacia</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="admin">
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V5l-8-3Z" fill="#0B1220"/></svg></span>
+      <span class="brand-text"><span class="t1">Denúncia Anônima</span><span class="t2">SISTEMA INTEGRADO DE SEGURANÇA</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Abrir menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <nav class="nav">
+      <a href="../index.html" data-page="home">Início</a>
+      <a href="../denuncia.html" data-page="denuncia">Fazer denúncia</a>
+      <a href="../consultar.html" data-page="consultar">Consultar protocolo</a>
+      <a href="login.html" class="cta" data-page="admin">Área da delegacia</a>
+    </nav>
+  </div>
+</header>
+
+<div class="admin-shell">
+  <div class="admin-top">
+    <div class="wrap">
+      <div class="admin-id">
+        <span class="icn"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V5l-8-3Z" fill="#0B1220"/></svg></span>
+        <div>
+          <h1>Painel de gestão da delegacia</h1>
+          <p id="admin-setor">Agente logado: — | Setor: —</p>
+        </div>
+      </div>
+      <div class="admin-tabs">
+        <a href="dashboard.html" data-page="dash">Dashboard</a>
+        <a href="denuncias.html" data-page="denuncias-admin" class="is-active">Denúncias</a>
+        <a href="administradores.html" data-page="admins">Administradores</a>
+        <a href="#" class="logout">Sair</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-body">
+    <div class="wrap">
+
+      <div class="filters-bar">
+        <div class="field">
+          <label for="f-busca">Buscar protocolo</label>
+          <input type="text" id="f-busca" placeholder="DEN-000000">
+        </div>
+        <div class="field">
+          <label for="f-categoria">Categoria</label>
+          <select id="f-categoria"><option value="">Todas categorias</option></select>
+        </div>
+        <div class="field">
+          <label for="f-status">Status</label>
+          <select id="f-status">
+            <option value="">Todos status</option>
+            <option value="recebido">Recebido</option>
+            <option value="analise">Em análise</option>
+            <option value="investigacao">Em investigação</option>
+            <option value="concluida">Concluída</option>
+            <option value="arquivada">Arquivada</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-urgencia">Urgência</label>
+          <select id="f-urgencia">
+            <option value="">Todas urgências</option>
+            <option value="baixa">Baixa</option>
+            <option value="media">Média</option>
+            <option value="alta">Alta</option>
+            <option value="emergencial">Emergencial</option>
+          </select>
+        </div>
+        <button class="btn btn-outline btn-sm" id="btn-limpar">Limpar filtros</button>
+      </div>
+
+      <div class="panel">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Protocolo</th>
+                <th>Data / hora</th>
+                <th>Categoria</th>
+                <th>Urgência</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="tabela-denuncias">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- MODAL GERENCIAR -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="modal-protocolo">Gerenciar denúncia</h3>
+      <button class="modal-close" id="modal-close" aria-label="Fechar">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="detail-grid">
+        <div class="kv"><div class="k">Categoria</div><div class="v" id="modal-categoria">—</div></div>
+        <div class="kv"><div class="k">Local</div><div class="v" id="modal-local">—</div></div>
+      </div>
+      <div class="detail-block">
+        <span class="k">Descrição</span>
+        <p id="modal-descricao">—</p>
+      </div>
+
+      <div class="field">
+        <label for="modal-status">Atualizar status</label>
+        <select id="modal-status">
+          <option value="recebido">Recebido</option>
+          <option value="analise">Em análise</option>
+          <option value="investigacao">Em investigação</option>
+          <option value="concluida">Concluída</option>
+          <option value="arquivada">Arquivada</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="modal-obs">Observação do agente (opcional)</label>
+        <textarea id="modal-obs" placeholder="Ex.: Encaminhado para perícia técnica."></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn btn-outline" id="modal-cancelar" type="button">Cancelar</button>
+        <button class="btn btn-primary" id="modal-salvar" type="button">Salvar atualização</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <strong>Sistema Web de Denúncias Anônimas</strong> © 2026
+    <div class="fine">Protótipo acadêmico desenvolvido para simulação de gestão e segurança pública.</div>
+  </div>
+</footer>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/admin-common.js"></script>
+<script src="../js/admin-denuncias.js"></script>
+</body>
+</html>
