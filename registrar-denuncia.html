@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registrar Denúncia - Denúncia Segura</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container nav">
+
+        <a href="index.html" class="logo">
+            🛡️ Denúncia Segura
+        </a>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="registrar-denuncia.html">Registrar Denúncia</a>
+            <a href="acompanhar-denuncia.html">Acompanhar</a>
+            <a href="admin.html">Delegacia</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+<section class="page-header">
+    <div class="container">
+
+        <span class="badge">DENUNCIANTE</span>
+
+        <h1>Registrar denúncia</h1>
+
+        <p>
+            Preencha as informações abaixo. Não é necessário informar
+            seus dados pessoais.
+        </p>
+
+    </div>
+</section>
+
+
+<section class="form-section">
+
+<div class="container">
+
+<div class="form-card">
+
+<div class="alert">
+    🔒 Sua identidade não será solicitada neste formulário.
+</div>
+
+
+<form id="denunciaForm">
+
+    <div class="form-group">
+
+        <label for="tipo">
+            Tipo de denúncia *
+        </label>
+
+        <select id="tipo" required>
+
+            <option value="">
+                Selecione uma categoria
+            </option>
+
+            <option value="Furto">
+                Furto
+            </option>
+
+            <option value="Roubo">
+                Roubo
+            </option>
+
+            <option value="Violência">
+                Violência
+            </option>
+
+            <option value="Tráfico de drogas">
+                Tráfico de drogas
+            </option>
+
+            <option value="Corrupção">
+                Corrupção
+            </option>
+
+            <option value="Vandalismo">
+                Vandalismo
+            </option>
+
+            <option value="Outro">
+                Outro
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="titulo">
+            Título da denúncia *
+        </label>
+
+        <input
+            type="text"
+            id="titulo"
+            placeholder="Ex.: Suspeita de atividade irregular"
+            required
+        >
+
+    </div>
+
+
+    <div class="form-row">
+
+        <div class="form-group">
+
+            <label for="local">
+                Local do ocorrido *
+            </label>
+
+            <input
+                type="text"
+                id="local"
+                placeholder="Rua, bairro ou ponto de referência"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="data">
+                Data do ocorrido *
+            </label>
+
+            <input
+                type="date"
+                id="data"
+                required
+            >
+
+        </div>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="descricao">
+            Descrição da denúncia *
+        </label>
+
+        <textarea
+            id="descricao"
+            rows="7"
+            placeholder="Descreva detalhadamente o que aconteceu..."
+            required
+        ></textarea>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="urgencia">
+            Nível de urgência
+        </label>
+
+        <select id="urgencia">
+
+            <option value="Baixa">
+                Baixa
+            </option>
+
+            <option value="Média">
+                Média
+            </option>
+
+            <option value="Alta">
+                Alta
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="checkbox-group">
+
+        <input
+            type="checkbox"
+            id="anonima"
+            checked
+            disabled
+        >
+
+        <label for="anonima">
+            Quero realizar esta denúncia anonimamente.
+        </label>
+
+    </div>
+
+
+    <button
+        type="submit"
+        class="btn btn-primary btn-full"
+    >
+        Enviar denúncia
+    </button>
+
+</form>
+
+
+<div
+    id="resultadoDenuncia"
+    class="success-box hidden"
+></div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="container footer-content">
+
+    <p>
+        © 2026 Denúncia Segura - Protótipo acadêmico
+    </p>
+
+</div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

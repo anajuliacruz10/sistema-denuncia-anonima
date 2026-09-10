@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Área da Delegacia</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="container nav">
+
+<a href="index.html" class="logo">
+    🛡️ Denúncia Segura
+</a>
+
+<nav>
+
+<a href="index.html">
+    Início
+</a>
+
+<a href="registrar-denuncia.html">
+    Denunciar
+</a>
+
+<a href="acompanhar-denuncia.html">
+    Acompanhar
+</a>
+
+<a href="admin.html">
+    Delegacia
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+<section class="page-header admin-header">
+
+<div class="container">
+
+<span class="badge">
+    ÁREA RESTRITA
+</span>
+
+<h1>
+    Dashboard da Delegacia
+</h1>
+
+<p>
+    Gerenciamento das denúncias recebidas.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="dashboard">
+
+<div class="container">
+
+
+<div class="stats-grid">
+
+<div class="stat-card">
+
+<span class="stat-icon">
+    📋
+</span>
+
+<div>
+
+<h3 id="totalDenuncias">
+    0
+</h3>
+
+<p>
+    Total de denúncias
+</p>
+
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<span class="stat-icon">
+    🟡
+</span>
+
+<div>
+
+<h3 id="pendentes">
+    0
+</h3>
+
+<p>
+    Pendentes
+</p>
+
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<span class="stat-icon">
+    🔵
+</span>
+
+<div>
+
+<h3 id="andamento">
+    0
+</h3>
+
+<p>
+    Em andamento
+</p>
+
+</div>
+
+</div>
+
+
+<div class="stat-card">
+
+<span class="stat-icon">
+    🟢
+</span>
+
+<div>
+
+<h3 id="finalizadas">
+    0
+</h3>
+
+<p>
+    Finalizadas
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="dashboard-card">
+
+<div class="dashboard-title">
+
+<div>
+
+<h2>
+    Denúncias recebidas
+</h2>
+
+<p>
+    Gerencie e atualize o status das denúncias.
+</p>
+
+</div>
+
+<button
+    class="btn btn-danger"
+    onclick="limparDenuncias()"
+>
+    Limpar dados
+</button>
+
+</div>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>
+    Protocolo
+</th>
+
+<th>
+    Tipo
+</th>
+
+<th>
+    Título
+</th>
+
+<th>
+    Local
+</th>
+
+<th>
+    Data
+</th>
+
+<th>
+    Status
+</th>
+
+<th>
+    Ação
+</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="tabelaDenuncias">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="container footer-content">
+
+<p>
+    © 2026 Denúncia Segura - Protótipo acadêmico
+</p>
+
+</div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
